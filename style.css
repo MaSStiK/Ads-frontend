@@ -24,22 +24,29 @@
 }
 
 .Ads__content {
-
+    margin-top: 26px;
 }
 
 .Ads__box {
     display: inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 24px;
+    border: solid black;
+    border-radius: 12px;
+    margin-left: 20px;
+    cursor: default;
 }
 
 .Box__info {
 
 }
 
-
 .Box__name {
-
+    margin-top: 150px;
 }
 
 .Box_phone {
-
+    margin-top: 12px;
 }
