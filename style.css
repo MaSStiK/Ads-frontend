@@ -20,7 +20,11 @@
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    padding: 8px 12px;
+    padding: 14px 12px;
+    margin-top: -12px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;     
 }
 
 .Ads__content {
@@ -49,4 +53,63 @@
 
 .Box_phone {
     margin-top: 12px;
+}
+
+.Modal__window {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+
+.Modal__form {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 9px;
+    display: inline-block;
+    background-color: white;
+    padding: 24px;
+}
+
+.Form__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.Form__content {}
+
+.Form__field {}
+
+.Form__field label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.Form__field input {
+    display: block;
+    width: 302px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+}
+
+.Form__button {
+    border: none;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(to top left, #0066ff, #00e9fa );
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
 }
