@@ -5,4 +5,9 @@ $(document).ready(function() {
         $(".Modal__window").css("display", "flex");
     });
 
+    $("#create").click(function() {
+        console.log(1);
+        $(".Modal__window").css("display", "none");
+    });
+
 });
