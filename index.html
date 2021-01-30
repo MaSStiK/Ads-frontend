@@ -11,7 +11,7 @@
         <div class="Header__title">Объявление</div>
         <div id="add" class="Header__button">Добавить</div>
     </div>
-    <div class="Ads__content">
+    <div id="content" class="Ads__content">
         <div class="Ads__box">
             <div class="Box__info">Текст объявления1</div>
             <div class="Box__name">Имя</div>
@@ -27,24 +27,25 @@
 
     <!-- Modal window -->
 
-    <div class="Modal__window">
+    <div id="modal" class="Modal__window" style="display: none;">
         <i></i>
+        <div id="close" class="Modal__mask"></div>
         <div class="Modal__form">
             <div class="Form__title">Новое объявление</div>
             <div class="Form__content">
                 <div class="Form__field">
                     <label>Текст объявление</label>
-                    <input type="text">
+                    <input name="text" type="text">
                 </div>
                 <div class="Form__field">
                     <label>Имя</label>
-                    <input type="text">
+                    <input name="name" type="text">
                 </div>
                 <div class="Form__field">
                     <label>Телефон</label>
-                    <input type="text">
+                    <input name="phone" type="text">
                 </div>
-                <button id="create" class="Form__button">Добавить</button>
+                <button id="new" class="Form__button">Добавить</button>
             </div>
         </div>
         <i></i>
