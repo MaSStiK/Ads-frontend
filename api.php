@@ -1,8 +1,23 @@
 <?php
 
-// phpinfo();
-echo '44848484 ';
+$pdo = new PDO('mysql:host=localhost;dbname=ads_db','root', 'root');
 
-$array_ads = ['q' => '1'];
+$query = $pdo -> prepare('INSERT INTO test (id) value (:id)');
+$query -> bindValue(':id', 1);
+$query -> execute();
 
-print_r($array_ads);
+if (isset($_GET['all'])) {
+    echo 'Все объявления';
+}
+
+else if (isset($_GET['add'])) {
+    echo 'Добавить объяление';
+}
+
+else if (isset($_GET['id'])) {
+    echo 'Показать объявление';
+}
+
+else if (isset($_GET['test'])) {
+    echo 'Переданное значение в test -> ' . $_GET['test'];
+}
