@@ -13,14 +13,30 @@ $(document).ready(function() {
 
     $("#new").click(function() {
 
+        // let ad = {
+        //     text: $("input[name='text']").val(),
+        //     contactName: $("input[name='name']").val(),
+        //     contactPhone: $("input[name='phone']").val()
+        // };
+        // arrayAds.push(ad);
+        // console.log(ad);
+        // renderAds();
+
         let ad = {
             text: $("input[name='text']").val(),
-            contactName: $("input[name='name']").val(),
-            contactPhone: $("input[name='phone']").val()
+            name: $("input[name='name']").val(),
+            phone: $("input[name='phone']").val()
         };
-        arrayAds.push(ad);
-        console.log(ad);
-        renderAds();
+
+        $.ajax ({
+            type: 'POST',
+            url: 'http://localhost/api.php/?add',
+            data: ad,
+            success: function(data) {
+                init()
+            }
+        });
+
         $("#modal").hide(); 
     });
 
@@ -39,6 +55,35 @@ $(document).ready(function() {
             $("#content").append(adHTML);
         });
     };
-    
 
+    init();
+    
+    function init() {
+        arrayAds = []
+        
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost/api.php/?all',
+            success: function(data) {
+                console.log(data);
+
+                data.map(element => {
+                    var ad = {
+                        text: element.text,
+                        contactName: element.name,
+                        contactPhone: element.phone
+                    }
+                   
+                    arrayAds.push(ad);
+                    renderAds();
+                });
+            }
+        });
+
+        // arrayAds.push(ad);
+
+        // console.log(arrayAds);
+
+
+    }
 });
